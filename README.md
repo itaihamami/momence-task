@@ -31,6 +31,8 @@ Create a simple React app (don't use NextJS please), which:
 - **Styled Components**
 - **React Query** (TanStack Query)
 
+**Note:** While the original requirements specified TypeScript, this implementation uses JavaScript for faster development. As the developer, I could become comfortable with TypeScript and easily implement it with a little time to refresh my knowledge. The choice of JavaScript was made to optimize development speed for this interview task while maintaining code quality and functionality.
+
 ## Features
 
 - Real-time currency exchange rates from Czech National Bank
@@ -80,6 +82,7 @@ src/
 ├── components/     # React components
 ├── hooks/          # Custom hooks
 ├── api/            # API services
+├── utils/          # Utility functions
 └── App.jsx         # Main application component
 ```
 
@@ -102,6 +105,10 @@ A basic test suite has been implemented using **Vitest** (Vite's native testing 
   - Tests parsing of CNB text format
   - Tests data structure validation
   - Tests error handling for malformed data
+- **Utility Function Tests** (`src/utils/__tests__/conversion-calculation.test.js`)
+  - Tests currency conversion calculations
+  - Tests edge cases (zero, negative, decimal amounts)
+  - Tests default parameter handling
 
 ### Future Testing Development
 
@@ -113,6 +120,22 @@ For comprehensive testing coverage, consider implementing:
 - **Visual Regression Testing** - Ensure UI consistency across changes
 
 **Note:** The current test suite focuses on core business logic (API calls, data parsing) rather than UI rendering, providing a solid foundation for future testing expansion.
+
+### Future Feature Development
+
+For enhanced functionality and user experience, consider implementing:
+
+- **2-Way Conversion** - Allow users to input either CZK amount or target currency amount for bidirectional conversion
+- **Cross-Currency Conversion** - Convert between any two currencies (not just CZK to others)
+- **Multi-Currency Conversion** - Add/remove multiple currencies to convert together in one view
+- **Design Improvements** - Enhanced UI/UX
+- **Historical Rates** - View exchange rate trends over time
+- **Date Selection** - Choose specific dates to view historical exchange rates
+- **Rate Alerts** - Notify users when rates reach certain thresholds
+- **Offline Support** - Cache rates for offline use with service workers
+- **Export Functionality** - Download conversion results as CSV/PDF
+- **Favorites System** - Save frequently used currency pairs
+- **Real-Time Updates** - WebSocket integration for live rate updates
 
 ## Deployment
 
