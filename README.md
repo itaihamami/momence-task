@@ -49,7 +49,7 @@ Create a simple React app (don't use NextJS please), which:
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/itaihamami/momence-task
 cd momence-task
 ```
 
