@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { keys, map, pathOr } from "ramda"
+import conversionCalculation from "../../../utils/conversion-calculation"
 
 const ConverterForm = ({ ratesByCode }) => {
   const [amount, setAmount] = useState(0)
@@ -8,7 +9,7 @@ const ConverterForm = ({ ratesByCode }) => {
   const [result, setResult] = useState(0)
 
   const calculateResult = () => {
-    setResult(amountInRate / pathOr(1, [convertTo, 'rate'], ratesByCode) * amount)
+    setResult(conversionCalculation(amountInRate, pathOr(1, [convertTo, 'rate'], ratesByCode), amount))
   }
 
   useEffect(() => {
