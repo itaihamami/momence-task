@@ -1,8 +1,26 @@
 #root {
   max-width: 1280px;
+  width: calc(100% - 4rem);
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header img {
+  width: 70px;
+  opacity: 0.5;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #ccc;
 }
 
 #converter {
@@ -63,5 +81,11 @@
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 768px) {
+  header img {
+    width: 50px;
   }
 }
