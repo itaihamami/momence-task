@@ -3,7 +3,7 @@ import { keys, map, pathOr } from "ramda"
 import conversionCalculation from "../../../utils/conversion-calculation"
 
 const ConverterForm = ({ ratesByCode }) => {
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState('')
   const [convertTo, setConvertTo] = useState('')
   const [amountInRate, setAmountInRate] = useState(1)
   const [result, setResult] = useState(0)
@@ -22,11 +22,9 @@ const ConverterForm = ({ ratesByCode }) => {
       <h2>Currency Converter</h2>
       <div className='d-flex justify-content-between gap-3'>
         <div className='d-flex flex-column align-items-start'>
-          <label htmlFor="amount">Amount in Kč</label>
-          <input id="amount" type="number" value={amount} onChange={e => setAmount(e.target.value)} />
+          <input id="amount" type="number" placeholder="100 Kč" value={amount} onChange={e => setAmount(e.target.value)} />
         </div>
         <div className='d-flex flex-column align-items-start'>
-          <label htmlFor="convertTo">Convert to</label>
           <select id="convertTo" onChange={e => setConvertTo(e.target.value)} value={convertTo}>
             <option value=''>Select currency</option>
             {map(code => (
@@ -42,4 +40,4 @@ const ConverterForm = ({ ratesByCode }) => {
   )
 }
 
-export default ConverterModal
+export default ConverterForm
